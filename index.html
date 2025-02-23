@@ -1,1 +1,128 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Print Shop</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        .product { margin: 20px; }
+        .form-container { margin: 20px auto; max-width: 400px; }
+        label { display: block; margin: 10px 0 5px; text-align: left; }
+        input, select { width: 100%; padding: 8px; margin-bottom: 10px; }
+        button { padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        .shipping-info { margin-top: 30px; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My 3D Print Shop</h1>
+    <p>Order your custom 3D-printed items below!</p>
+
+    <div class="product">
+        <h2>Keychain - $15 + $4 Shipping</h2>
+        <p>Custom 3D-printed keychain in PLA.</p>
+
+        <div class="form-container">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <!-- PayPal required fields -->
+                <input type="hidden" name="cmd" value="_xclick">
+                <input type="hidden" name="business" value="your.paypal.email@example.com">
+                <input type="hidden" name="item_name" value="3D-Printed Keychain">
+                <input type="hidden" name="amount" value="15.00">
+                <input type="hidden" name="shipping" value="4.00">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="return" value="https://yourwebsite.com/thanks">
+                <input type="hidden" name="cancel_return" value="https://yourwebsite.com/cancel">
+
+                <!-- Address fields -->
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name" id="first_name" required>
+
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name" id="last_name" required>
+
+                <label for="address1">Street Address</label>
+                <input type="text" name="address1" id="address1" required>
+
+                <label for="address2">Apt/Suite (Optional)</label>
+                <input type="text" name="address2" id="address2">
+
+                <label for="city">City</label>
+                <input type="text" name="city" id="city" required>
+
+                <label for="state">State</label>
+                <select name="state" id="state" required>
+                    <option value="">Select State</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+
+                <label for="zip">ZIP Code</label>
+                <input type="text" name="zip" id="zip" required pattern="\d{5}" title="Enter a 5-digit ZIP code">
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+
+                <button type="submit">Buy Now</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="shipping-info">
+        <h3>Shipping Details</h3>
+        <p>Shipping costs: $4 for keychains. Orders ship within 3-5 business days via USPS First Class. <br>
+        Contact us at your.email@example.com for questions!</p>
+    </div>
+
+    <p>Contact: your.email@example.com</p>
+</body>
+</html>
